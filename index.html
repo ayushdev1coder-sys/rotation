@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Motion Controller</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Three.js -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/examples/js/loaders/GLTFLoader.js"></script>
+</head>
+<body>
+
+<header>
+    <h1>📱 Phone Motion Controller</h1>
+    <p>Rotate images and 3D models using your phone.</p>
+</header>
+
+<div class="container">
+
+    <div class="buttons">
+
+        <button id="bluetoothBtn">
+            🔵 Connect Bluetooth
+        </button>
+
+        <button id="motionBtn">
+            📱 Enable Motion Sensors
+        </button>
+
+        <button id="fullscreenBtn">
+            ⛶ Full Screen
+        </button>
+
+    </div>
+
+    <div class="status">
+
+        <h2>Status</h2>
+
+        <p>Bluetooth:
+            <span id="btStatus">Disconnected</span>
+        </p>
+
+        <p>Motion:
+            <span id="motionStatus">Disabled</span>
+        </p>
+
+    </div>
+
+    <div class="sensorPanel">
+
+        <h2>Live Sensor Data</h2>
+
+        <p>Accel X:
+            <span id="ax">0</span>
+        </p>
+
+        <p>Accel Y:
+            <span id="ay">0</span>
+        </p>
+
+        <p>Accel Z:
+            <span id="az">0</span>
+        </p>
+
+        <hr>
+
+        <p>Alpha:
+            <span id="alpha">0</span>
+        </p>
+
+        <p>Beta:
+            <span id="beta">0</span>
+        </p>
+
+        <p>Gamma:
+            <span id="gamma">0</span>
+        </p>
+
+    </div>
+
+    <div class="uploadPanel">
+
+        <h2>Upload Image</h2>
+
+        <input type="file"
+               id="imageInput"
+               accept="image/*">
+
+        <h2>Upload 3D Model</h2>
+
+        <input type="file"
+               id="modelInput"
+               accept=".glb,.gltf">
+
+    </div>
+
+    <div id="viewer">
+
+        <img id="imageViewer"
+             src=""
+             alt="Uploaded Image">
+
+        <canvas id="threeCanvas"></canvas>
+
+    </div>
+
+</div>
+
+<script src="bluetooth.js"></script>
+<script src="motion.js"></script>
+<script src="model.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
